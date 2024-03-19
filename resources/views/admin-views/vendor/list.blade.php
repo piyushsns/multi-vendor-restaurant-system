@@ -156,11 +156,11 @@
                                         <td>
                                             <form action="{{route('admin.vendor.venue-class',$restaurant->id)}}">
                                                 <select name="venue_class" id="venue_class" onchange="this.form.submit()">
-                                                    @for ($i = 1; $i <= 9; $i++)
+                                                    {{-- @for ($i = 1; $i <= 9; $i++)
                                                         <option value="{{$i-1}}" {{$restaurant->venue_class == $i - 1?'selected':''}}>
                                                             {{$selectList[$restaurant->venue_type][$i]}}
                                                         </option>
-                                                    @endfor                                                    
+                                                    @endfor                                                     --}}
                                                 </select>
                                             </form>
                                         </td>

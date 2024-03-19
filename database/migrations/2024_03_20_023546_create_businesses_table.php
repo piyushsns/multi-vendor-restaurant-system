@@ -21,9 +21,10 @@ class CreateBusinessesTable extends Migration
             $table->string('email')->nullable();
             $table->string('address')->nullable();
             $table->string('fax')->nullable();
+            $table->boolean('status')->nullable()->default(0);
             $table->timestamps();           
         });
-    }
+}
 
     /**
      * Reverse the migrations.

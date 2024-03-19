@@ -377,10 +377,12 @@ class VendorController extends Controller
                 array("Club", "Restaurant", "Cafe", "Hotel", "Co-work", "Lounge", "Private", "Member", "Club", "Elite Venue"),
             );
 
+
             return view('admin-views.vendor.list', compact('restaurants', 'zone', 'type', 'selectList'));   
         }
         catch (\Exception $e) {
             Toastr::warning($e->getMessage());
+            dd($e);
         }
     }
     
