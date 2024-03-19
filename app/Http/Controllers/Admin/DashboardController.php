@@ -13,11 +13,13 @@ use App\Models\OrderTransaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends Controller
 {
     public function dashboard(Request $request)
     {
+        Mail::raw('Hello World!', function($msg) {$msg->to('piyush.jain@snssystem.com')->subject('Test Email'); });
         $params = [
             'zone_id' => $request['zone_id'] ?? 'all',
             'statistics_type' => $request['statistics_type'] ?? 'overall',
