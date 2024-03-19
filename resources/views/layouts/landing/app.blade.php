@@ -78,11 +78,11 @@
                             href="{{ route('home') }}">{{ __('messages.home') }}<span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    @if ($landing_page_links['web_app_url_status'])
+                    {{-- @if ($landing_page_links['web_app_url_status'])
                     <li class="nav-item">
                         <a class="nav-link"  href="{{ $landing_page_links['web_app_url'] }}">{{ __('messages.browse_web') }}</a>
                     </li>
-                    @endif
+                    @endif --}}
                     <li class="nav-item">
                         <a class="nav-link"
                             href="{{ route('terms-and-conditions') }}">{{ __('messages.terms_and_condition') }}</a>
