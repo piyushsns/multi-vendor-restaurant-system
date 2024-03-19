@@ -38,13 +38,13 @@ class ConfigServiceProvider extends ServiceProvider
             if ($emailServices) {
                 $config = array(
                     'status' => (Boolean)(isset($emailServices['status'])?$emailServices['status']:1),
-                    'driver' => "smtp",
-                    'host' => "smtp.gmail.com",
-                    'port' => "587",
-                    'username' => "slgsnsteam@gmail.com",
-                    'password' => "fbqwffclgievxjwi",
-                    'encryption' => "tls",
-                    'from' => array('address' => "slgsnsteam@gmail.com", 'name' => "RMS"),
+                    'driver' =>  env('MAIL_DRIVER'),
+                    'host' => env('MAIL_HOST'),
+                    'port' => env('MAIL_PORT'),
+                    'username' => env('MAIL_USERNAME'),
+                    'password' => env('MAIL_PASSWORD'),
+                    'encryption' => env('MAIL_ENCRYPTION'),
+                    'from' => array('address' => env('MAIL_FROM_ADDRESS'), 'name' => env('MAIL_FROM_NAME')),
                     'sendmail' => '/usr/sbin/sendmail -bs',
                     'pretend' => false,
                 );
