@@ -13,13 +13,12 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
 
     Route::group(['middleware' => ['admin']], function () {
 
+        //dashboard
+        Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
         Route::get('settings', 'SystemController@settings')->name('settings');
         Route::post('settings', 'SystemController@settings_update');
         Route::post('settings-password', 'SystemController@settings_password_update')->name('settings-password');
         Route::get('/get-restaurant-data', 'SystemController@restaurant_data')->name('get-restaurant-data');
-
-        //dashboard
-        Route::get('/', 'DashboardController@dashboard')->name('dashboard');
 
         Route::resource('account-transaction', 'AccountTransactionController')->middleware('module:account');
 
@@ -33,7 +32,7 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
             Route::post('user-overview', 'DashboardController@user_overview')->name('user-overview');
             Route::post('business-overview', 'DashboardController@business_overview')->name('business-overview');
         });
-        
+
         Route::group(['prefix' => 'business', 'as' => 'business.', 'middleware' => ['module:business']], function () {
             Route::get('add-new', 'BusinessController@add_new')->name('add-new');
             Route::post('store', 'BusinessController@store')->name('store');
@@ -62,9 +61,9 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
             Route::delete('delete/{id}', 'EmployeeController@distroy')->name('delete');
             Route::post('search', 'EmployeeController@search')->name('search');
         });
-        
+
         Route::post('food/variant-price', 'FoodController@variant_price')->name('food.variant-price');
-        
+
         Route::group(['prefix' => 'food', 'as' => 'food.', 'middleware' => ['module:food']], function () {
             Route::get('add-new', 'FoodController@index')->name('add-new');
             Route::post('variant-combination', 'FoodController@variant_combination')->name('variant-combination');
@@ -302,7 +301,7 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
             Route::get('bulk-export', 'AddOnController@bulk_export_index')->name('bulk-export-index');
             Route::post('bulk-export', 'AddOnController@bulk_export_data')->name('bulk-export');
         });
-        
+
         Route::group(['prefix' => 'cuisine', 'as' => 'cuisine.'], function () {
             Route::get('get-all', 'CuisineController@get_all')->name('get-all');
             Route::group(['middleware' => ['module:cuisine']], function () {
@@ -460,7 +459,7 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
                 Route::get('status/{id}/{status}', 'BusinessSettingsController@status_featured_venues')->name('status');
                 Route::delete('delete/{id}', 'BusinessSettingsController@delete_featured_venue')->name('delete');
             });
-          
+
             Route::group(['prefix' => 'hottest-lounges', 'as' => 'hottest-lounges.', 'middleware' => ['module:hottest-lounges']], function () {
                 Route::get('/', 'BusinessSettingsController@hottest_lounges')->name('add-new');
                 Route::post('store', 'BusinessSettingsController@store_hottest_lounges')->name('store');
@@ -558,7 +557,7 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
             Route::get('earning', 'ReportController@earning_index')->name('earning');
             Route::post('set-date', 'ReportController@set_date')->name('set-date');
         });
-        
+
         Route::get('customer/select-list', 'CustomerController@get_customers')->name('customer.select-list');
         Route::group(['prefix' => 'customer', 'as' => 'customer.', 'middleware' => ['module:customerList']], function () {
             Route::group(['middleware' => ['module:customerList']], function () {

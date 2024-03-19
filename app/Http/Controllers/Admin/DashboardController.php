@@ -145,7 +145,7 @@ class DashboardController extends Controller
             $delivered = $delivered->Notpos()->count();
             $canceled = $canceled->Notpos()->count();
             $refund_requested = $refund_requested->Notpos()->count();
-            $refunded = $refunded->Notpos()->count();            
+            $refunded = $refunded->Notpos()->count();
         }
 
 
