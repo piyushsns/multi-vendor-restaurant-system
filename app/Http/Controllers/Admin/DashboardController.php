@@ -19,7 +19,6 @@ class DashboardController extends Controller
 {
     public function dashboard(Request $request)
     {
-        Mail::raw('Hello World!', function($msg) {$msg->to('piyush.jain@snssystem.com')->subject('Test Email'); });
         $params = [
             'zone_id' => $request['zone_id'] ?? 'all',
             'statistics_type' => $request['statistics_type'] ?? 'overall',
