@@ -123,7 +123,7 @@
                                     <div style="height: 52px; width: 52px; overflow-x: hidden;overflow-y: hidden">
                                         <img width="52px" style="border-radius: 50%; height:100%;"
                                              onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'"
-                                             src="{{asset('storage/app/public/category')}}/{{$category['image']}}">
+                                             src="{{asset('storage/category')}}/{{$category['image']}}">
                                     </div>
                                 </td>
                                 <td>

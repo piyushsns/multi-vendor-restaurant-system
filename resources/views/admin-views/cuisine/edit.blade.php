@@ -71,7 +71,7 @@
                                     <label class="input-label" for="exampleFormControlInput1">{{__('messages.name')}}</label>
                                     <input type="text" name="name" class="form-control" placeholder="{{__('messages.new_cuisine')}}" value="{{old('name')}}" required maxlength="191">
                                 </div>
-                                <input type="hidden" name="lang[]" value="{{$lang}}">
+                                <input type="hidden" name="lang[]" value="{{isset($lang) ? $lang:''}}">
                             @endif
                             <div class="row" style="margin-left: 4px; margin-top: 28px;">
                                 <label class="input-label" for="exampleFormControlInput1" style="margin-top: 6px;">Status</label>
@@ -88,7 +88,7 @@
                                 <div style="margin-bottom:0%; padding-top: 12px;">
                                     <center>
                                         <img style="width: 200px; height: 200px; object-fit: cover; border: 1px solid; border-radius: 10px;" id="viewer"
-                                             src="{{asset('storage/app/public/cuisine')}}/{{$cuisine['image']}}" alt=""/>
+                                             src="{{asset('/storage/cuisine')}}/{{$cuisine['image']}}" alt=""/>
                                     </center>
                                 </div>
                                 <label>{{__('messages.image')}}</label><small style="color: red">* ( {{__('messages.ratio')}} 1:1 )</small>

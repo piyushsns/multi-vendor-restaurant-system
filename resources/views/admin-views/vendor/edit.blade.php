@@ -140,7 +140,7 @@
                                         <img style="width: 320px; height: 220px;border: 1px solid; border-radius: 10px; object-fit:cover;"
                                             id="coverImageViewer"
                                             onerror="this.src='{{ asset('public/assets/admin/img/900x400/img1.jpg') }}'"
-                                            src="{{ asset('storage/app/public/restaurant/cover/' . $restaurant->cover_photo) }}"
+                                            src="{{ asset('storage/restaurant/cover/' . $restaurant->cover_photo) }}"
                                             alt="Product thumbnail" />
                                     </center>
 
@@ -165,7 +165,7 @@
                                     <img style="width: 300px; height: 220px;border: 1px solid; border-radius: 10px;"
                                         id="logoImageViewer"
                                         onerror="this.src='{{ asset('public/assets/admin/img/400x400/img2.jpg') }}'"
-                                        src="{{ asset('storage/app/public/restaurant/' . $restaurant->logo) }}"
+                                        src="{{ asset('storage/restaurant/' . $restaurant->logo) }}"
                                         alt="Product thumbnail" />
                                 </center>
 
@@ -263,7 +263,7 @@
                         <br>
                         <div class="col-md-6" style="margin-top: 18px;">
                             <img style="width: 240px; height: 240px;border: 1px solid; border-radius: 50%; object-fit:cover;"
-                                    id="chefImageViewer" src="{{ asset('storage/app/public/vendor/' . $vendor->image) }}"
+                                    id="chefImageViewer" src="{{ asset('storage/vendor/' . $vendor->image) }}"
                                     alt="Product thumbnail" />
                             <div class="form-group pt-2" style="margin-top: 24px;">
                                 <label for="name">{{ __('messages.upload') }} {{ __('messages.chef') }}

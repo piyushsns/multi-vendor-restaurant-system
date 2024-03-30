@@ -24,7 +24,8 @@ class CuisineController extends Controller
     public function list(Request $request)
     {
         $cuisines = Cuisine::where('active_status', 1)
-        ->orderBy('priority', 'DESC')
+       // ->orderBy('priority', 'DESC')
+        ->latest()
         ->orderBy('updated_at', 'DESC')
         ->latest()->paginate(config('default_pagination'));
         return view('admin-views.cuisine.list',compact('cuisines'));

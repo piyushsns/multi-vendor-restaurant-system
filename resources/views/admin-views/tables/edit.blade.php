@@ -90,7 +90,7 @@
                                 <center>
                                     <img style="width: 224px; height: 224px; object-fit: cover; border: 1px solid; border-radius: 10px;" id="viewer"
                                         @if(isset($table))
-                                        src="{{asset('storage/app/public/tables')}}/{{$table['image']}}"
+                                        src="{{asset('storage/tables')}}/{{$table['image']}}"
                                         @else
                                         src="{{asset('public/assets/admin/img/900x400/img1.jpg')}}"
                                         @endif

@@ -360,7 +360,7 @@ class VendorController extends Controller
                     return $query->where('zone_id', $zone_id);
             })
             ->with('vendor')
-            ->orderBy('priority', 'DESC')
+            ->latest()
             ->orderBy('percentile_rank', 'DESC')
             ->orderBy('updated_at', 'DESC')
             ->latest()->paginate(config('default_pagination'));           
@@ -382,7 +382,7 @@ class VendorController extends Controller
         }
         catch (\Exception $e) {
             Toastr::warning($e->getMessage());
-            dd($e);
+          
         }
     }
     

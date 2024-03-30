@@ -91,7 +91,7 @@
                             <center>
                                 <img style="width: 200px; height: 200px; object-fit: cover; border: 1px solid; border-radius: 10px;" id="imageViewer"
                                     onerror="this.src='{{asset('public/assets/admin/img/900x400/img1.jpg')}}'"
-                                     src="{{asset('storage/app/public/category')}}/{{$category['image']}}" alt="image"/>
+                                     src="{{asset('storage/category')}}/{{$category['image']}}" alt="image"/>
                             </center>
                         </div>
                     </div>

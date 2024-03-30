@@ -39,9 +39,9 @@
                     <div class="col-sm-auto mb-1 mb-sm-0">
                         <select name="category_id" onchange="set_filter('{{ url()->full() }}',this.value, 'type')"
                             data-placeholder="{{ __('messages.all') }}" class="form-control">
-                            <option value="all" {{ $type == 'all' ? 'selected' : '' }}>{{ __('messages.all') }}</option>
-                            <option value="veg" {{ $type == 'veg' ? 'selected' : '' }}>{{ __('messages.veg') }}</option>
-                            <option value="non_veg" {{ $type == 'non_veg' ? 'selected' : '' }}>{{ __('messages.non_veg') }}
+                            <option value="all" {{ isset($type) &&  $type == 'all' ? 'selected' : '' }}>{{ __('messages.all') }}</option>
+                            <option value="veg" {{ isset($type) &&  $type == 'veg' ? 'selected' : '' }}>{{ __('messages.veg') }}</option>
+                            <option value="non_veg" {{ isset($type) &&  $type == 'non_veg' ? 'selected' : '' }}>{{ __('messages.non_veg') }}
                             </option>
                         </select>
                     </div>
@@ -242,7 +242,7 @@
                                     @foreach ($foods as $key => $food)
                                         <tr>
                                             <td>
-                                                <a class="media align-items-center" href="{{ route('admin.food.view', [$food['id']]) }}"><img style="width: 44px; height: 44px; border-radius: 50%;" src="{{ asset('storage/app/public/product') }}/{{ $food['image'] }}" onerror="this.src='{{ asset('public/assets/admin/img/160x160/img2.jpg') }}'" alt="{{ $food->name }} image"></img>
+                                                <a class="media align-items-center" href="{{ route('admin.food.view', [$food['id']]) }}"><img style="width: 44px; height: 44px; border-radius: 50%;" src="{{ asset('storage/product') }}/{{ $food['image'] }}" onerror="this.src='{{ asset('public/assets/admin/img/160x160/img2.jpg') }}'" alt="{{ $food->name }} image"></img>
                                                 </a>
                                             </td>
                                             <td>

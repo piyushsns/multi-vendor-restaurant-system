@@ -75,7 +75,7 @@
                                             <div style="height: 60px; width: 60px; overflow-x: hidden;overflow-y: hidden">
                                                 <img width="60px;" height="height: 60px;" style="border-radius: 50%; height:100%; object-fit: cover;"
                                                         onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'"
-                                                        src="{{asset('storage/app/public/tables')}}/{{$table['image']}}">
+                                                        src="{{asset('storage/tables')}}/{{$table['image']}}">
                                             </div>
                                         </td>
                                         <td>

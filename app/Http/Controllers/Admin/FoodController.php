@@ -476,7 +476,8 @@ class FoodController extends Controller
         ->when(is_numeric($category_id), function($query)use($category_id){
             return $query->where('category_id', $category_id);
         })
-        ->orderBy('priority', 'DESC')
+        //->orderBy('priority', 'DESC')
+        ->latest()
         ->orderBy('updated_at', 'DESC')
         ->latest()
         ->paginate(config('default_pagination'));

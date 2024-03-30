@@ -76,14 +76,15 @@
                         </thead>
 
                         <tbody id="set-rows">
+                        @php $i=1; @endphp
                         @foreach($cuisines as $key=>$cuisine)
                             <tr>
-                                <td>{{ $key }}</td>
+                                <td>{{ $i }}</td>
                                 <td>
                                     <div class="text-center" style="height: 60px; width: 60px; overflow-x: hidden;overflow-y: hidden">
                                         <img width="60" style="border-radius: 50%; height:100%; object-fit: cover;"
                                              onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'"
-                                             src="{{asset('storage/app/public/cuisine')}}/{{$cuisine['image']}}">
+                                             src="{{asset('/storage/cuisine')}}/{{$cuisine['image']}}">
                                     </div>
                                 </td>
                                 <td>
@@ -133,6 +134,7 @@
                                     </form>
                                 </td>
                             </tr>
+                            @php $i++; @endphp
                         @endforeach
                         </tbody>
                     </table>

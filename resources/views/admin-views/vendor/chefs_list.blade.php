@@ -74,7 +74,7 @@
                                         <td>
                                             <img width="44px;" height="44px;" style="border-radius: 50%; object-fit: cover;" 
                                                 onerror="this.src='{{asset('public/assets/admin/img/160x160/img1.jpg')}}'" 
-                                                src="{{asset('storage/app/public/vendor')}}/{{$chef['image']}}">
+                                                src="{{asset('storage/vendor')}}/{{$chef['image']}}">
                                         </td>
                                         <td>
                                             <font color="#006633" style="bold">{{Str::limit($chef->f_name,10,'...')}}&nbsp;{{Str::limit($chef->l_name,10,'...')}}</font>
